@@ -20,7 +20,7 @@ class Promise{
 		fn(this.resolve.bind(this), this.reject.bind(this));
 
 	}
-
+        // 实现链式调用
 	then(resolveFn, rejectFn) {
 
 		const status       = this._status;
@@ -46,8 +46,6 @@ class Promise{
 			} catch(e) {
 				catchFn.call(p, e);
 			}
-			
-			
 		   }
 
 		   const rejectHandler = val => {
@@ -77,7 +75,6 @@ class Promise{
 
 	resolve(val) {
 		handlerQueue(this.resolveQueue, 'FULLFILLED', this, val);
-
 	}
 
 	reject(val) {
@@ -139,8 +136,6 @@ class Promise{
 			reject(val);
 		})
 	}
-
-	
 }
 
 
