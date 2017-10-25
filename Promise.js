@@ -59,7 +59,7 @@ class Promise{
 				resolveQueue.push(handler);
 				rejectQueue.push(rejectHandler);
 			} else if (status === 'FULLFILLED'){
-			    handler();
+			        handler();
 			} else if(status === 'REJECTED') {
 				rejectHandler();
 			}
